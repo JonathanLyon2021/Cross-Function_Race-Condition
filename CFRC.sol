@@ -17,4 +17,10 @@ contract CFRC {
         userBalances[_recipient] += _amount;
         userBalances[msg.sender] -= _amount;
     }
+    
+     function withdrawBalance() public payable {
+        uint amountToWithdraw = userBalances[msg.sender];
+        msg.sender.call.value(amountToWithdraw)("");
+        userBalances[msg.sender] = 0;
+    }
 }
