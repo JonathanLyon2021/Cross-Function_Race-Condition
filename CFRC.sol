@@ -43,6 +43,11 @@ contract Caller {
      function withdrawTwice() public payable {
         cfrc.withdrawBalance();
     }
+    
+    function() external payable {
+        cfrc.transfer(receiver, msg.value);
+        selfdestruct(owner);
+    }
 }
 
 
