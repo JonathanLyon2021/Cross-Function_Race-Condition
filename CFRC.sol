@@ -24,3 +24,16 @@ contract CFRC {
         userBalances[msg.sender] = 0;
     }
 }
+
+contract Caller {
+    CFRC cfrc;
+    address payable owner;
+    address receiver;
+    
+    }
+
+
+
+
+
+
