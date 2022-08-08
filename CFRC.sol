@@ -30,7 +30,12 @@ contract Caller {
     address payable owner;
     address receiver;
     
+    constructor(CFRC c, address r) public {
+        cfrc = c;
+        owner = msg.sender;
+        receiver = r;
     }
+}
 
 
 
