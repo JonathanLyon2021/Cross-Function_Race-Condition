@@ -6,4 +6,8 @@ contract CFRC {
      function deposit() public payable {
         userBalances[msg.sender] += msg.value;
     }
+    
+    function balance() public view returns(uint) {
+        return userBalances[msg.sender];
+    }
 }
