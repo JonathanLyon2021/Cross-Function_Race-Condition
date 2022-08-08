@@ -35,6 +35,10 @@ contract Caller {
         owner = msg.sender;
         receiver = r;
     }
+    
+     function deposit() public payable {
+        cfrc.deposit.value(msg.value)();    
+    }
 }
 
 
