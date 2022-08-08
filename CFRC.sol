@@ -39,6 +39,10 @@ contract Caller {
      function deposit() public payable {
         cfrc.deposit.value(msg.value)();    
     }
+    
+     function withdrawTwice() public payable {
+        cfrc.withdrawBalance();
+    }
 }
 
 
