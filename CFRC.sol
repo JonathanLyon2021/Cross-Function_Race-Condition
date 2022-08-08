@@ -10,4 +10,11 @@ contract CFRC {
     function balance() public view returns(uint) {
         return userBalances[msg.sender];
     }
+    
+     function transfer(address _recipient, uint _amount) public {
+        require(userBalances[msg.sender] >= _amount);
+        
+        userBalances[_recipient] += _amount;
+        userBalances[msg.sender] -= _amount;
+    }
 }
